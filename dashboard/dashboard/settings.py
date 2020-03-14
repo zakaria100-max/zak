@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'module',
     'myuser',
+    'rest_framework',
+    'rest_framework.authtoken',
+
 ]
 
 MIDDLEWARE = [
@@ -83,6 +86,12 @@ DATABASES = {
     }
 }
 
+REST_FRAMEWORK= {
+  'DEFAULT_PERMISSION_CLASSES':{
+  'rest_framework.permissions.IsAuthenticated'
+  }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -118,5 +127,5 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/ 
+# https://docs.djangoproject.com/en/3.0/howto/
 STATIC_URL = '/static/'
